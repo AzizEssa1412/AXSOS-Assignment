@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  background-color: rgb(62, 54, 54);
+}
+
+.nav-title {
+  color: aliceblue;
+  flex: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: disc;
+  width: 50%;
+  list-style-type: none;
+  color: aliceblue;
+  align-items: center;
+}
+
+.btn {
+  color: aliceblue;
+  background-color: aqua;
+  scrollbar-shadow-color: black;
+}
+
+.nav-links {
+  text-decoration: none;
+}
+.activ {
+  font: size 20px;
+}

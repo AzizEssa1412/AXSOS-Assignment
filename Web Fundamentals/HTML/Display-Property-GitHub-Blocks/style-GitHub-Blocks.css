@@ -1,0 +1,40 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.div-img-1 {
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+  justify-content: space-around;
+}
+.div-img-2 {
+  display: flex;
+  justify-content: space-around;
+  background-color: brown;
+}
+.div-img-3 {
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.all-div p {
+  display: flex;
+  justify-content: center;
+  font-style: normal;
+}
+
+img {
+  height: 200px;
+}
+
+.div-img-2 img {
+  justify-content: center;
+}
+
+.all-div {
+  width: 800px;
+  margin: 0 auto;
+}
