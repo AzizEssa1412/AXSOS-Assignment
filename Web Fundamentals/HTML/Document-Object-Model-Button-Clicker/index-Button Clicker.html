@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Dojonary</h1>
+      <div class="search-box">
+        <input type="text" placeholder="Search" />
+      </div>
+      <button class="btn" onclick="toggleLogin(this)">Login</button>
+    </header>
+
+    <div class="container">
+      <div class="left">
+        <div class="card">
+          <h2>ninja <small>noun</small></h2>
+          <p><em>Plural: ninjas</em></p>
+          <p>
+            A practitioner skilled in the <a href="#">Japanese art</a> of
+            ninjutsu
+          </p>
+          <button class="btn like-btn" onclick="like(this)">13 likes</button>
+        </div>
+
+        <div class="card">
+          <h2>ninja <small>noun</small></h2>
+          <p><em>Plural: ninjas</em></p>
+          <p>
+            A programmer who breaks down problems with
+            <a href="#">zen-like</a> focus
+          </p>
+          <button class="btn like-btn" onclick="like(this)">37 likes</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="card">
+          <p><strong>Dojonary is defined by YOU</strong></p>
+          <button class="btn add-btn" onclick="removeButton(this)">
+            Add Definition
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
