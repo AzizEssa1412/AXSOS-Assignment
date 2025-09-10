@@ -6,6 +6,7 @@
 .nav-title {
   color: aliceblue;
   flex: auto;
+  margin: 15px;
 }
 
 ul {
@@ -24,9 +25,10 @@ ul {
   scrollbar-shadow-color: black;
 }
 
-.nav-links {
-  text-decoration: none;
-}
 .activ {
   font: size 20px;
+}
+a {
+  color: white;
+  text-decoration: none;
 }

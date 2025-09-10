@@ -18,6 +18,7 @@ h1 {
   display: flex;
   justify-content: center;
   background-color: aliceblue;
+  justify-content: space-around;
 }
 
 .all-div p {
@@ -31,6 +32,10 @@ img {
 }
 
 .div-img-2 img {
+  justify-content: center;
+}
+
+.div-img-3 img {
   justify-content: center;
 }
 
