@@ -1,7 +1,13 @@
 //  Edit Profile - تغيير الاسم
 function editProfile() {
-  let newName = "aziz";
-  document.getElementById("profile-name").innerText = newName;
+  var name = document.querySelector("#profile-name");
+  console.log(name);
+
+  if (name.innerText !== "aziz") {
+    name.innerText = "aziz";
+  } else if (name.innerText == "aziz") {
+    name.innerText = "ibrahim";
+  }
 }
 
 //  قبول طلبات الاتصال
