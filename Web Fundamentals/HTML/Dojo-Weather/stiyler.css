@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background: #f6f7fb;
+  color: #222;
+}
+
+/* شريط علوي */
+.topbar {
+  background: #a6c8ff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 8px;
+}
+.cities {
+  display: flex;
+  gap: 8px;
+}
+.city-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.city-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.unit-select {
+  margin-left: auto;
+  color: #fff;
+}
+
+/* المحتوى الرئيسي */
+.container {
+  max-width: 920px;
+  margin: 18px auto;
+  padding: 0 12px;
+  width: 70%;
+}
+h1 {
+  margin: 8px 0;
+  font-size: 28px;
+}
+hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin-bottom: 16px;
+}
+
+/* شبكة البطاقات */
+.cards {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 160px;
+  height: 300px;
+}
+.icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 8px 0;
+}
+.card .desc {
+  color: #666;
+  margin: 6px 0;
+}
+.temps {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.temp-high {
+  color: #e05b5b;
+}
+.temp-low {
+  color: #2f8bff;
+}
+
+/* شريط الكوكيز */
+.cookie-bar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: #fffbea;
+  border: 1px solid #e6d6a0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.cookie-text {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+.cookie-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #444;
+}
+.cookie-action button {
+  background: #2a7cff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.cookie-action button:hover {
+  opacity: 0.95;
+}
+
+/* استجابة بسيطة */
+@media (max-width: 520px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+  .unit-select {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .cookie-bar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 10px;
+  }
+}

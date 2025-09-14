@@ -1,45 +1,54 @@
 .container {
   width: 950px;
   background-color: silver;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 10px;
-  box-sizing: border-box;
 }
+
+/* الأخضر (أعلى الصفحة) */
 .top-nav {
   height: 150px;
   background-color: green;
   margin-bottom: 20px;
 }
+
+/* قسم الأزرق + الأحمر */
+.content {
+  display: flex; /* يحط الأزرق + الأحمر بجانب بعض */
+  gap: 20px; /* مسافة بين الأزرق والأحمر */
+}
+
+/* الأزرق */
 .side-nav {
   height: 300px;
   width: 200px;
   background-color: blue;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
 }
+
+/* الأحمر */
 .main {
-  height: 400px;
-  width: 700px;
   background-color: red;
-  display: inline-block;
-  vertical-align: top;
+  flex: 1; /* ياخذ المساحة المتبقية */
   padding: 20px;
-  box-sizing: border-box;
-  font-size: 0;
 }
+
+/* المربعات الصفراء */
+.sub-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 96%;
+}
+
 .sub-content {
   height: 200px;
-  width: 210px;
+  width: 30%; /* تقسيم متساوي داخل الأحمر */
   background-color: yellow;
-  display: inline-block;
-  margin-right: 20px;
-  font-size: initial;
 }
+
+/* البنفسجي */
 #advertisement {
   height: 120px;
-  width: 660px;
   background-color: purple;
-  margin-top: 20px;
-  display: block;
+  width: 96%;
 }
