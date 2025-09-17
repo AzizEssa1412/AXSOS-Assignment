@@ -1,100 +1,355 @@
+/* 
+  ملف CSS مشروح: كل كتلة تحتوي على شرح يبين الهدف من القاعدة، سبب الاستخدام،
+  ملاحظات عن التوافق أو الأثر، واقتراحات بديلة أو تحسينات (responsive, accessibility...).
+  ملاحظة عامة: لو حابب أطبّق هذه التحسينات عملياً (زي تحويل العرض ليكون متجاوب)
+  أخبرني وأعدل الكود فعلياً — حالياً الشرح داخل التعليقات فقط.
+*/
+
+/* ============================
+   RESET / NORMALIZATION
+   ============================
+*/
+/* نزيل الهوامش والـ padding الافتراضي لأي عنصر في الصفحة.
+    السبب: المتصفحات تعطى عناصر افتراضياً margin/padding مختلفة — هذا يجعل التصميم متناسق.
+    ملاحظة/تحسين: بديل احترافي هو استخدام normalize.css أو reset كامل.
+    تنبيه: هذه الطريقة تؤثر على كل شيء، فإذا أردت الحفاظ على بعض القيم الافتراضية
+    للمكونات (مثل form elements) قد تحتاج لضبط إضافي. */
 * {
   margin: 0;
   padding: 0;
 }
 
-.fontFamilly {
-  font-family: "Balsamiq Sans", sans-serif;
+/* اجعل شريط التمرير مخفيًا على مستوى الصفحة.
+   لماذا؟ عادة يستخدم لإخفاء الـ scrollbar أو لمنع التمرير إذا التصميم ثابت.
+   تحذير مهم: يعطل هذا الوصول للمنطقة التي تتجاوز ارتفاع النافذة — سيؤثر على تجربة المستخدم
+   وخاصة على الشاشات الصغيرة أو عند محتوى ديناميكي.
+   بديل أكثر أماناً: استخدم overflow-y: auto; على عناصر محددة أو احرص أن المحتوى لا يتجاوز الارتفاع. */
+body {
+  overflow: hidden;
 }
 
+/* ============================
+   MAIN CONTAINER
+   ============================
+*/
+/* صندوق رئيسي ثابت العرض ولونه أزرق غامق.
+    width: 970px => عرض ثابت (غير متجاوب). 
+    margin: 0 auto => يوسّط العنصر أفقياً داخل العنصر الأب. */
+.container {
+  background-color: #265175;
+  width: 970px;
+  margin: 0 auto;
+}
+
+/* اقتراح: لجعله متجاوب بدلاً من width ثابت:
+.container {
+  max-width: 970px;   <- يحدد الحد الأعلى
+  width: 100%;        <- يسمح بالانكماش على شاشات صغيرة
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+*/
+
+/* ============================
+   ألوان وأنماط نصية عامة
+   ============================
+*/
+/* فئة عامة لتلوين نص بألوان فاتحة مناسبة على الخلفية الداكنة */
+.w-col {
+  color: #d4dde4;
+}
+
+/* لون أصفر ذهبي للتمييز */
+.yello-color {
+  color: #debf4a;
+}
+
+/* اسم فئة غامض (col-gg) يضع النص أسود.
+   ملاحظة: تسمية الفئات يجب أن تكون واضحة (مثلاً .text-dark أو .theme-dark) لتسهيل الصيانة. */
+.col-gg {
+  color: black;
+}
+
+/* لون أزرق فاتح — قد يستخدم لتسليط الضوء على روابط أو عناوين فرعية */
+.blue-color {
+  color: #79aad4;
+}
+
+/* ============================
+   HEADER / رأس الصفحة
+   ============================
+*/
+/* .header يستخدم flex لعمل صف يحتوي عناصر على جانبي الشريط */
+.header {
+  display: flex; /* تحويل الحاوية إلى flexbox لتحديد موقع العناصر داخله بسهولة */
+  justify-content: space-between; /* يوزع العناصر بحيث يكون أحدها على اليسار وآخر على اليمين */
+  padding: 0 25px 0 25px; /* مسافة أفقية داخل الـ header */
+  margin: 25px 25px 0 0; /* مسافة خارجية : من الأعلى واليمين هنا */
+}
+
+/* ملاحظة عملية: غالباً نضيف align-items: center; ليتوسّط العناصر عمودياً داخل الـ header */
+/* مثال اقتراحي:
 .header {
   display: flex;
-  width: 27%;
-  height: 80px;
-  background-color: black;
-  margin: 0 auto;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 25px;
+  margin: 25px 25px 0 0;
+}
+*/
+
+/* صورة (مثال: شعار) مسمّاة .python-image */
+.python-image {
+  width: 400px;
+  height: 100px;
+  /* ملاحظة: تحديد كلا العرض والارتفاع بالقيم الثابتة قد يشوّه الصورة.
+     بديل أفضل للحفاظ على نسبة العرض/الارتفاع:
+     max-width: 100%; height: auto; أو استخدام object-fit: contain; */
 }
 
-.header-title {
+/* نص صغير مع لون أبيض */
+.text-size {
+  font-size: 13px;
   color: white;
-  margin: 0 0 0 25px;
+  margin: 10px 0 10px 25px;
 }
 
-.feeds-title {
-  font-weight: normal;
+/* خط/نص يرمز لـ "أو" مثلاً */
+.or-line {
+  color: black;
+}
+
+/* فئة عامة لعنصر بحث أو نصوص بحث */
+.search {
+  color: white;
+}
+
+/* صندوق البحث: مربع ذو ظل وزوايا مستديرة، يحتوي على عناصر داخلية متمركزة */
+.search-box {
+  width: 250px;
+  height: 50px;
+  display: flex; /* لتمركز المحتوى أفقياً وعمودياً */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 4px black; /* offset-x, offset-y, blur, color */
+  border-radius: 10px;
+  background-color: #444444;
+}
+
+/* ملاحظة: لو عنصر Search-text هو input، فقد تحتاج لإزالة border الافتراضي وضبط outline عند الفوكس */
+
+/* ملاحظة على اسم الفئة: في الكود اسمها .Search-text (S كبيرة).
+   في HTML/CSS العادي هذا يعمل، لكن من الأفضل الالتزام بنمط واحد (camelCase أو kebab-case). */
+.Search-text {
+  height: 25px;
+  width: 130px;
+  height: 25px; /* هذا السطر مكرر (نفس الخاصية مذكورة مرتين) — التكرار غير ضار لكن غير نظيف */
+  margin-right: 5px;
+}
+
+/* تنسيق النص الافتراضي للـ placeholder — يَستخدم لتوسيط النص داخل حقل الإدخال.
+   ملاحظة: من الأفضل استهداف input::placeholder مثلاً، وبعض المتصفحات القديمة كانت تحتاج بادئات (-webkit-, -moz-). */
+::placeholder {
   text-align: center;
-  margin-top: 25px;
 }
 
-.container {
+/* زر إرسال صغير ذو تأثير حواف ليعطي إحساس "مرفوع" باستخدام حدود ملونة مختلفة */
+.sub-but-go {
+  height: 25px;
+  width: 45px;
+  background-color: #265175;
+  border-top: 2px solid #c0c0c0; /* باعث لإيحاء الإضاءة من الأعلى */
+  border-left: 2px solid #c0c0c0; /* باعث لإيحاء الإضاءة من اليسار */
+  border-bottom: 2px solid #6c6c6c; /* ظل أسفل يماثل تأثير بارز */
+  border-right: 2px solid #6c6c6c;
+}
+
+/* ============================
+   NAVIGATION / شريط التنقل
+   ============================
+*/
+/* نزل ul داخل .nav كـ flex لأفقية القائمة */
+.nav ul {
+  display: flex; /* يجعل العناصر الأبن flex items وتتوزع أفقياً */
+  height: 50px;
+  background-color: #467eab;
+  width: 85%; /* عرض نسبي داخل الحاوية الأب (قد يكون مفيد أو يسبب مشاكل إذا الحاوية ضيقة) */
+  margin: 10px auto 25px auto; /* يوسّط الـ nav أفقياً */
+  align-items: center; /* يوسّط العناصر رأسياً داخل الارتفاع المحدد */
+  justify-content: space-evenly; /* يقدّم مسافات متساوية بين عناصر القائمة */
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+  font-size: 20px;
+  list-style: none; /* يحذف نقاط القائمة الافتراضية (bullets) */
+}
+
+/* إزالة التحته التلقائي من الـ anchor داخل الـ nav */
+.nav ul a {
+  text-decoration: none;
+  /* ملاحظة: ربما تريد أيضاً color: inherit; أو تحديد لون الروابط، وتحسين :hover و:focus لأفضلية الوصول (accessibility). */
+}
+
+/* ============================
+   محتوى المواضيع والوصف
+   ============================
+*/
+.subjects-description {
+  display: flex; /* يُنَسّق عناصر الوصف والمواضيع في صف */
+  justify-content: space-around; /* يعطي مسافات متساوية حول كل عنصر */
+  margin: 0 0 0 25px; /* فقط مسافة من اليسار */
+}
+
+.subjects {
+  margin: 25px 0 0 0;
+  padding-top: 25px;
+  text-align: center; /* يوسّط النص داخل كل موضوع */
+}
+
+/* روابط الموضوع — مسافات بسيطة */
+.subject-links {
+  margin-top: 4px;
+  margin: 8px 0 0 0; /* ملاحظة: تعريفان للـ margin قد يسببان لبس — هنا آخر تعريف (8px 0 0 0) سيفعل */
+}
+
+/* سهم أو أيقونة صغيرة بجانب الروابط */
+.arrow {
+  font-size: 9px;
+  margin-right: 6px;
+}
+
+.description {
+  margin: 25px 0 25px 0;
+  padding-right: 25px;
+  text-align: center;
+}
+
+/* ============================
+   نص تاريخ بايثون/القصة (خطأ إملائي: python-hestory)
+   ============================
+*/
+.python-hestory {
+  width: 610px;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  display: inline-block; /* inline-block يسمح بعرض العرض والارتفاع مع البقاء في تدفق الأسطر */
+  /* ملاحظة: inline-block يتصرف كالكتلة داخل سطر — قد يترك فراغات بيضاء بين العناصر المجاورة */
+}
+
+/* اقتراح: إذا الهدف نص طويل على يمين/يسار عنصر آخر استخدم flex على الحاوية الأب ثم امنح هذا العنصر flex: 1; */
+
+/* نص بأسلوب مائل — للتأكيد أو اقتباس */
+.better-than {
+  margin: 0 0 10px 25px;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.zen-python {
+  font-size: 18px;
+}
+
+/* ============================
+   STARTED / APPLICATION — قسم بدايات التطبيق
+   ============================
+*/
+
+/* ملاحظة مهمة: هنا يوجد تعريف مكرر لفئة .started-application مرتين.
+   في CSS، القاعدة التي تظهر لاحقاً في الملف تتفوق على السابقة عند التعارض.
+   من الأفضل دمج القواعد لتجنب اللبس. */
+
+/* تعريف أول */
+.started-application {
+  display: flex;
+  height: 215px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding-top: 7px;
+}
+
+/* تعريف ثاني (يتواجد بعد الأول) — يضيف justify-content: center;
+   النتيجة النهائية ستكون مزيج: display:flex (من الأول أو الثاني) و justify-content:center (من الثاني). */
+.started-application {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
 }
 
-.profile-info-div {
-  border: 3px solid black;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  padding: 25px 0 25px 0;
-}
-
-.profile-img {
-  margin: 0 auto 25px auto;
-  display: block;
-  width: 70px;
-}
-
-.avatar-link {
-  font-size: 20px;
-  color: #2a6ba2;
-}
-
-.profile-name {
-  margin-top: 25px;
-  font-size: 20px;
-}
-
-.feeds-container {
-  margin: 0 0 0 25px;
-}
-
-.feed-div {
-  border: 3px solid black;
-  width: 340px;
-  height: 160px;
-  margin-bottom: 20px;
-}
-
-.feed-header {
+/* دمج مقترح:
+.started-application {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 25px 0 25px 0;
+  justify-content: center;
+  align-items: center; <- لو نبغى توسيط عمودي كذلك
+  height: 215px;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 7px;
+  text-align: center;
+}
+*/
+
+/* أعمدة داخل قسم البداية */
+.getting-started-div,
+.application-div {
+  width: 400px;
+  margin-left: 20px; /* مسافة بسيطة بين الأعمدة */
 }
 
-.feed-description {
-  margin: 0 0 0 15px;
-  padding-top: 20px;
-  font-size: 17px;
+/* رؤوس صغيرة زينة */
+.started-header,
+.application-header {
+  height: 5px;
+  background-color: #75a8d3;
 }
 
-.person-name {
-  font-weight: normal;
-  font-size: 24px;
+/* قوائم بدايات/تطبيق */
+.started-list,
+.application-list {
+  width: 230px;
+  margin: 0 auto; /* يوسّط القائمة أفقياً داخل العنصر الأب */
+  list-style-type: square; /* نقاط مربعة للقائمة */
 }
 
-.feed-description-link {
-  color: #2a6ba2;
+/* ============================
+   FOOTER / تذييل الصفحة
+   ============================
+*/
+/* تذييل مزخرف بتدرج لوني */
+.footer {
+  background-image: linear-gradient(#2c577a, #326b9c);
+  height: 100px;
+  /* ملاحظة: ينصح بوضع background-color احتياطي قبل gradient للمتصفحات القديمة:
+     background-color: #2c577a;
+     background-image: linear-gradient(...);
+  */
 }
 
-.increase-likes {
-  height: 40px;
-  width: 60px;
-  font-size: 17px;
-  border: 3px solid black;
-  box-shadow: 4px 4px 4px black;
-  background-color: #ffd966;
+/* محتوى داخل الفوتر */
+.footer-description {
+  width: 700px;
+  height: 70px;
+  display: flex;
+  justify-content: space-evenly; /* مسافات متساوية بين عناصر الفوتر */
+  align-items: end; /* يضع الأطفال عند الحافة السفلية (ملحوظة: القيمة الشائعة هي flex-end) */
+  margin: 0 auto; /* يوسّط الحاوية داخل الفوتر */
 }
+
+/* روابط footer بدون تسطير */
+.footer-links {
+  text-decoration: none;
+  /* ملاحظة: قد تحتاج إلى تحديد :hover و :focus لتجربة أفضل و لتحسين الوصول */
+}
+
+/* ============================
+   نصائح عامة وصيانة
+   ============================
+   - راجع الأسماء: حافظ على تسمية الفئات بأسلوب موحّد (مثلاً kebab-case: .search-box).
+   - تكرار القواعد: تجنّب تكرار selector الواحد عدة مرات إلا إذا كان القصد override مقصود.
+   - Responsive: استبدل القياسات الثابتة (px) بنسبة أو استخدم max-width و media queries.
+   - Accessibility: راجع تباين الألوان (contrast) لتضمن وضوح النص لضعاف البصر.
+   - Box-sizing: من الممارسات الجيدة إضافة box-sizing: border-box; للعناصر لتسهيل حساب الأبعاد.
+   - Placeholder: استهدف المحدد الصحيح input::placeholder لتطبق على عناصر محددة فقط.
+   - Flexbox: عندما تستخدم display:flex تأكد من استخدام align-items عند الحاجة للتمركز العمودي.
+   - الصور: لتجنب تشوّه الصورة استخدم max-width:100%; height:auto; أو object-fit.
+*/
+
+/* نهاية الملف */
