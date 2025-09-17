@@ -1,50 +1,26 @@
-// دالة تحويل من °C إلى °F
-function cToF(celsius) {
-  return Math.round((celsius * 9) / 5 + 32);
+function displayCityOnAlert(element) {
+  alert(element.innerText);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const cityButtons = document.querySelectorAll(".city-btn");
-  const cityTitle = document.getElementById("cityTitle");
-  const unitSelect = document.getElementById("unitSelect");
-  const acceptBtn = document.getElementById("acceptCookies");
-  const cookieBar = document.getElementById("cookieBar");
+function removeCokie(element) {
+  let parent = element.closest(".cockie-div");
+  parent.remove();
+}
 
-  // إخفاء شريط الكوكيز عند الضغط على Accept
-  acceptBtn.addEventListener("click", function () {
-    cookieBar.style.display = "none";
-  });
-
-  // عند اختيار مدينة
-  cityButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const cityName = btn.getAttribute("data-city");
-      alert("Loading weather report...");
-      cityTitle.textContent = cityName;
-    });
-  });
-
-  // عند تغيير وحدة الحرارة
-  unitSelect.addEventListener("change", function () {
-    const unit = unitSelect.value;
-    const highs = document.querySelectorAll(".temp-high");
-    const lows = document.querySelectorAll(".temp-low");
-
-    function updateTemps(nodeList) {
-      nodeList.forEach(function (el) {
-        const c = parseFloat(el.getAttribute("data-celsius"));
-        if (unit === "c") {
-          el.textContent = Math.round(c) + "°";
-        } else {
-          el.textContent = cToF(c) + "°";
-        }
-      });
+function changeTempreture() {
+  let temp = document.querySelector(".combo-box");
+  let arr = document.querySelectorAll(".temperature-number");
+  if (temp.value === "celsius") {
+    for (let i = 0; i < arr.length; i++) {
+      let num = parseInt(arr[i].innerText);
+      let newNum = (num - 32) / 1.8;
+      arr[i].innerText = `${Math.ceil(newNum)}°`;
     }
-
-    updateTemps(highs);
-    updateTemps(lows);
-  });
-
-  // تشغيل التحويل عند تحميل الصفحة
-  unitSelect.dispatchEvent(new Event("change"));
-});
+  } else {
+    for (let i = 0; i < arr.length; i++) {
+      let num = parseInt(arr[i].innerText);
+      let newNum = num * 1.8 + 32;
+      arr[i].innerText = `${Math.floor(newNum)}°`;
+    }
+  }
+}

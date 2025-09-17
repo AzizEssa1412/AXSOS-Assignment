@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>DojoWeather - Simple</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dojo Weather</title>
     <link rel="stylesheet" href="stiyler.css" />
     <script src="js.js"></script>
+    />
   </head>
   <body>
-    <header class="topbar">
-      <div class="logo">DojoWeather</div>
-      <nav class="cities">
-        <button class="city-btn" data-city="San Jose">San Jose</button>
-        <button class="city-btn" data-city="Burbank">Burbank</button>
-        <button class="city-btn" data-city="Chicago">Chicago</button>
-        <button class="city-btn" data-city="Dallas">Dallas</button>
-      </nav>
-    </header>
-
-    <main class="container">
-      <h1 id="cityTitle">San Jose</h1>
-      <div class="unit-select">
-        show temperature in
-        <select id="unitSelect" aria-label="temperature unit">
-          <option value="c">°C</option>
-          <option value="f">°F</option>
-        </select>
+    <div class="header">
+      <div class="header-content flex">
+        <h1 class="title balsamiq-font">Dojo Weather</h1>
+        <div class="links flex">
+          <h2 class="link balsamiq-font" onclick="displayCityOnAlert(this)">
+            Burbank
+          </h2>
+          <h2 class="link balsamiq-font" onclick="displayCityOnAlert(this)">
+            Chicago
+          </h2>
+          <h2 class="link balsamiq-font" onclick="displayCityOnAlert(this)">
+            Dallas
+          </h2>
+        </div>
       </div>
-      <hr />
-      <section class="cards">
-        <!-- اليوم الأول -->
-        <article class="card">
-          <h3>Today</h3>
-          <div class="icon">
-            <img src="images/rain.png" alt="rain" />
-          </div>
-          <p class="desc">some rain</p>
-          <div class="temps">
-            <span class="temp-high" data-celsius="24">24°</span>
-            <span class="temp-low" data-celsius="18">18°</span>
-          </div>
-        </article>
-
-        <!-- اليوم الثاني -->
-        <article class="card">
-          <h3>Tomorrow</h3>
-          <div class="icon">
-            <img src="images/sun.png" alt="sun" />
-          </div>
-          <p class="desc">some sun</p>
-          <div class="temps">
-            <span class="temp-high" data-celsius="27">27°</span>
-            <span class="temp-low" data-celsius="19">19°</span>
-          </div>
-        </article>
-
-        <!-- اليوم الثالث -->
-        <article class="card">
-          <h3>Friday</h3>
-          <div class="icon">
-            <img src="images/cloud.png" alt="cloud" />
-          </div>
-          <p class="desc">some clouds</p>
-          <div class="temps">
-            <span class="temp-high" data-celsius="21">21°</span>
-            <span class="temp-low" data-celsius="16">16°</span>
-          </div>
-        </article>
-
-        <!-- اليوم الرابع -->
-        <article class="card">
-          <h3>Saturday</h3>
-          <div class="icon">
-            <img src="images/sun.png" alt="sun" />
-          </div>
-          <p class="desc">some sun</p>
-          <div class="temps">
-            <span class="temp-high" data-celsius="26">26°</span>
-            <span class="temp-low" data-celsius="21">21°</span>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <!-- الشريط اسفل الصفحة -->
-    <div id="cookieBar" class="cookie-bar">
-      <div class="cookie-text">
-        <strong>Stop! Cookie time</strong>
-        <p>
-          We use cookies (sadly not the edible ones) to personalize content and
-          ads, to provide social media features and to analyse our traffic.
-          <a href="#" tabindex="-1">Read more...</a>
-        </p>
+    </div>
+    <div class="container">
+      <div class="navbar flex">
+        <h2 class="san-joes balsamiq-font">San Jose</h2>
+        <div class="change-temperature">
+          <label class="show-temperature balsamiq-font"
+            >show temperature in:
+          </label>
+          <select
+            name="°C"
+            class="combo-box temp-type"
+            onchange="changeTempreture()"
+          >
+            <option value="celsius" class="balsamiq-font temp-type">°C</option>
+            <option value="fahrenheit" class="balsamiq-font temp-type">
+              °F
+            </option>
+          </select>
+        </div>
       </div>
-      <div class="cookie-action">
-        <button id="acceptCookies">I Accept</button>
+      <div class="border"></div>
+      <div class="weather-tempreature flex">
+        <div class="weather-day-div">
+          <p class="day-name balsamiq-font">Today</p>
+          <img src="some_rain.png" alt="some rain" class="weather-images" />
+          <p class="weather-conditions balsamiq-font">some rain</p>
+          <div class="temperature-number-div">
+            <p class="temperature-number balsamiq-font red-color">24°</p>
+            <p class="temperature-number balsamiq-font blue-color">18°</p>
+          </div>
+        </div>
+        <div class="weather-day-div">
+          <p class="day-name balsamiq-font">Tomorrow</p>
+          <img src="some_sun.png" alt="some sun" class="weather-images" />
+          <p class="weather-conditions balsamiq-font">some sun</p>
+          <div class="temperature-number-div">
+            <p class="temperature-number balsamiq-font red-color">27°</p>
+            <p class="temperature-number balsamiq-font blue-color">19°</p>
+          </div>
+        </div>
+        <div class="weather-day-div">
+          <p class="day-name balsamiq-font">Friday</p>
+          <img src="some_clouds.png" alt="some clouds" class="weather-images" />
+          <p class="weather-conditions balsamiq-font">some clouds</p>
+          <div class="temperature-number-div">
+            <p class="temperature-number balsamiq-font red-color">21°</p>
+            <p class="temperature-number balsamiq-font blue-color">16°</p>
+          </div>
+        </div>
+        <div class="weather-day-div saturday-wather">
+          <p class="day-name balsamiq-font">Saterday</p>
+          <img src="some_sun.png" alt="some sun" class="weather-images" />
+          <p class="weather-conditions balsamiq-font">some sun</p>
+          <div class="temperature-number-div">
+            <p class="temperature-number balsamiq-font red-color">26°</p>
+            <p class="temperature-number balsamiq-font blue-color">21°</p>
+          </div>
+        </div>
+      </div>
+      <div class="cockie-div flex">
+        <div class="cockie-img-div">
+          <img src="cookie.png" alt="cookie" class="cockie-img" />
+        </div>
+        <div class="cookie-description">
+          <p class="cockie-time balsamiq-font">Stop! Cookie time</p>
+          <p class="use-cookie balsamiq-font">
+            We use cookies (sadly not the edible ones) to personalize content
+            and ads. to provide social media features and to analyse our
+            traffic. to provide social media features and to analyse our
+            traffic. and to analyse our traffic.
+            <a href="#" class="read-more">Read more ...</a>
+          </p>
+        </div>
+        <button class="accept-cookie balsamiq-font" onclick="removeCokie(this)">
+          I Accept
+        </button>
       </div>
     </div>
   </body>
