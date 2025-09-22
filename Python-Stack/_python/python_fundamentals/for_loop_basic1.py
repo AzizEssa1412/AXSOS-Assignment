@@ -29,9 +29,9 @@ while (num >= 0):
     num -= 4
 
 # 6-
-low_Num = input("the lower number: ")
-hight_Num = input("the hight number: ")
-mult = input("the mult number: ")
+low_Num = 2
+hight_Num = 9
+mult = 3
 
 for x in range(int(low_Num), int(hight_Num)+1):
     if(x % 3 == 0):
