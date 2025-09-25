@@ -3,7 +3,7 @@ def a():
     return 5
 print(a())
 
-# 2- : 
+# 2-
 def a():
     return 5
 print(a()+a())

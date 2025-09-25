@@ -7,7 +7,7 @@ for x in range (5, 1000):
     print(f"{x}*5 = {x*5}")
 
 # 3-
-for x in range (1, 100):
+for x in range (1, 101):
     if x % 10 == 0 :
         print("Coding Dojo")
     elif x % 5 == 0:
@@ -17,7 +17,7 @@ for x in range (1, 100):
 
 # 4-
 evg = 0
-for x in range(0, 500000):
+for x in range(0, 500001):
     if x % 2 == 1:
         evg += x
 print(f"the numbers from 0 to 500000 is: {evg}")
