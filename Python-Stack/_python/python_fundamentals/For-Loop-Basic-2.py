@@ -58,30 +58,42 @@ def min(ghr):
 print(min([37,2,1,-9]))
 print(min([]))
 
+
 #7- Maximum:-
 def max(lot):
-        if len(lot)==0:
-            return False
-max_val = lot[0]
-for num in lot :
+    if len(lot)==0:
+        return False
+    max_val = lot[0]
+    for num in lot :
         if num >max_val:
             max_val = num
-return max_val
+    return max_val
 
-# 
 
 #8- Ultimate Analysis:-
+def ultimate_analysis(lst):
+    if len(lst) == 0:
+        return False
+    return {
+        'sumTotal': sum_total(lst),
+        'average': average(lst),
+        'minimum': minimum(lst),
+        'maximum': maximum(lst),
+        'length': length(lst)
+    }
+
+print(ultimate_analysis([37, 2, 1, -9]))
+# {'sumTotal': 31, 'average': 7.75, 'minimum': -9, 'maximum': 37, 'length': 4}
 
 
 
 #9- Reverse List:-
-def a(first,secend):
-    if first<secend:
-        print(7)
-    else:
-        print(14)
-    # return 3
-# print(a(2,3))
-# print(a(5,3))
-print(a(2,3) + a(5,3))
-#
+def reverse_list(lst):
+    left = 0
+    right = len(lst) - 1
+    while left < right:
+        lst[left], lst[right] = lst[right], lst[left]
+        left += 1
+        right -= 1
+    return lst
+
