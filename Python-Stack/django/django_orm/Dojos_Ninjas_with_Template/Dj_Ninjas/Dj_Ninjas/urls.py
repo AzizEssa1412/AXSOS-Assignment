@@ -1,5 +1,5 @@
 """
-URL configuration for Dojo_Survey project.
+URL configuration for Dj_Ninjas project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -19,5 +19,5 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("Myapp.urls") )
+    path('', include('myapp.urls')),
 ]
