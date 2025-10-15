@@ -1,0 +1,100 @@
+<!--
+  Welcome to Tailwind Play, the official Tailwind CSS playground!
+
+  Everything here works just like it does when you're running Tailwind locally
+  with a real build pipeline. You can customize your theme, use features
+  like `@utility`, or even add third-party plugins using `@plugin`.
+
+  Feel free to play with this example if you're just learning, or trash it and
+  start from scratch if you know enough to be dangerous. Have fun!
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>users</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="h-[100vh] w-full">
+    <div class="flex h-80/100 flex-col items-center justify-center">
+      <h1 class="mt-5 mb-10 text-5xl font-bold">All the Users</h1>
+      <div class="h-auto overflow-y-auto">
+        <table class="w-150 border-2 text-left">
+          <tr class="bg-gray-300">
+            <th class="border-r-2 p-5">ID</th>
+            <th class="border-r-2 p-5">Name</th>
+            <th class="border-r-2 p-5">Email</th>
+            <th class="border-r-2 p-5">Age</th>
+          </tr>
+          {% for user in all_users %}
+          <tr class="p-5 even:bg-gray-200">
+            <td class="border-r-2 p-5">{{ user.id }}</td>
+            <td class="border-r-2 p-5">
+              {{ user.first_name }} {{ user.last_name }}
+            </td>
+            <td class="border-r-2 p-5">{{ user.email_address }}</td>
+            <td class="border-r-2 p-5">{{ user.age }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <div class="mt-10 mb-10 w-[60%] border-t-2"></div>
+      <h2 class="mb-10 text-5xl font-bold">Add a User</h2>
+      <form
+        action="/add_user"
+        method="post"
+        class="flex w-200 flex-col items-center justify-center"
+      >
+        {% csrf_token %}
+        <div class="flex justify-center">
+          <div class="flex flex-col">
+            <div class="w-80">
+              <input
+                id="first_name"
+                name="first_name"
+                placeholder="first_name name"
+                type="text"
+                class="border-2"
+              />
+            </div>
+            <div class="mt-4">
+              <input
+                id="email"
+                name="email"
+                placeholder="Email"
+                type="email"
+                class="border-2"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div>
+              <input
+                id="last_name"
+                name="last_name"
+                placeholder="last name"
+                type="text"
+                class="border-2"
+              />
+            </div>
+            <div class="mt-4">
+              <input
+                id="age"
+                name="age"
+                placeholder="age"
+                type="text"
+                class="border-2"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="mt-10 cursor-pointer rounded border-2 p-1 shadow-[2px_2px_black]"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
