@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styleing.css' %}">
+</head>
+<body>
+<div class="page">
+    <h1 class="title">Counter</h1>
+
+    <p class="stat">Visited: {{ request.session.num }} times</p>
+    <p class="stat">Incremented: {{ request.session.custom }} times</p>
+
+    <div class="actions">
+        <a href="/destroy_session" class="btn">Reset</a>
+        <a href="/inc_by_two" class="btn">Add 2</a>
+    </div>
+
+    <form action="/custom_inc" method="post" class="custom-form">
+        {% csrf_token %}
+        <label for="custom_num">Enter Your Number:</label>
+        <input
+            type="text"
+            name="custom_num"
+            id="custom_num"
+            placeholder="Enter custom number"
+            pattern="[0-9]+"
+            class="text-input"
+        >
+        <input type="submit" value="increase" class="submit-btn">
+    </form>
+</div>
+</body>
+</html>
