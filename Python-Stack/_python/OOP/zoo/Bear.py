@@ -1,4 +1,4 @@
-from Python.Assignments.Zoo.Animal import Animal
+from Axsos._python.OOP.zoo.Animal import Animal
 
 
 class Bear(Animal):

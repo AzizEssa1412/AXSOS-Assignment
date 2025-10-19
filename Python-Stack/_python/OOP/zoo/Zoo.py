@@ -1,7 +1,7 @@
 from Lion import Lion
 from Monky import Monkey
 from Bear import Bear
-from Axsos._python.oop.zoo.Animal import Animal
+from Axsos._python.OOP.zoo.Animal import Animal
 
 
 class Zoo:
