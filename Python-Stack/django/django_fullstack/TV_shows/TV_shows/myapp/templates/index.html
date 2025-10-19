@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>title</td>
+            <td>network</td>
+            <td>date</td>
+            <td>desc</td>
+        </tr>
+        {% for show in shows%}
+        <tr>
+            <td>{{show.title}}</td>
+            <td>{{show.netwark}}</td>
+            <td>{{show.date}}</td>
+            <td>{{show.desc}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="showe/new">new showe</a>
+</body>
+</html>
