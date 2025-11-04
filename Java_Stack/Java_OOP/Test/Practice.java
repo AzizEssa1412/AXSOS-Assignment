@@ -29,3 +29,8 @@ public class Practice {
 // boolean myBool = true;
 // String myText = 'Hello my name is aziz';
 
+
+// String firstName = "Aziz";
+// String lastName = "issa";
+// String fuulName = firstName + lastName ;
+// System.out.println(fuulName);
