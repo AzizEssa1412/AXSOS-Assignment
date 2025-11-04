@@ -2,7 +2,7 @@ package Puzzle;
 
 import java.util.Arrays;
 import java.util.Random;
-public class Main {
+public class Puzeel {
     static Random random = new Random();
 
     public static void main(String [] args){
