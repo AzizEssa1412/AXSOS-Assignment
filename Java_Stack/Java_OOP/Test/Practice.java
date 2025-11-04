@@ -21,3 +21,11 @@ public class Practice {
     }
 
 }
+
+//testing :
+// int myNum = 5;
+// float myFloat = 5.09f;
+// char myChar = 'A';
+// boolean myBool = true;
+// String myText = 'Hello my name is aziz';
+
