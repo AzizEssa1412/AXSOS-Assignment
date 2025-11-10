@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Axsos.iml" filepath="$PROJECT_DIR$/.idea/Axsos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_OOP/BOS1_Java/BOS1_Java.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_OOP/BOS1_Java/BOS1_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_Fundamentals/Java Cafe/Java Cafe.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_Fundamentals/Java Cafe/Java Cafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_Fundamentals/Java_Fundamentals.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_Fundamentals/Java_Fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_Stack.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_Stack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_Fundamentals/alferd_bot/alferd_bot.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_Fundamentals/alferd_bot/alferd_bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_OOP/bank_account/bank_account.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_OOP/bank_account/bank_account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Stack/Java_OOP/coffe_app/coffe_app.iml" filepath="$PROJECT_DIR$/Java_Stack/Java_OOP/coffe_app/coffe_app.iml" />
+    </modules>
+  </component>
+</project>
