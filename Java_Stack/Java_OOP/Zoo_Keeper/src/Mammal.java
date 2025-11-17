@@ -2,7 +2,7 @@ public class Mammal {
     private double energy;
 
     public Mammal(){
-        this.energy = 100.0;
+        this.energy = 100;
     }
 
     public double getEnergy() {

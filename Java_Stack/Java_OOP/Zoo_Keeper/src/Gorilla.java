@@ -6,23 +6,21 @@ public class Gorilla extends Mammal{
 
     public Gorilla(){
         super();
-//        this.setEnergy(100);
     }
 
     public void throwSomething(){
-        this.setEnergy(this.getEnergy()-5.0);
+        this.setEnergy(this.getEnergy()-5);
         System.out.println("the gorilla has thrown an object.");
-        if(this.getEnergy() < 0.0) {
-            this.setEnergy(0.0);
+        if(this.getEnergy() < 0) {
+            this.setEnergy(0);
         }
     }
 
-    //DRY..
-//    changeEnergy()
+
 
     public void eatBananas(){
-        if(this.getEnergy() + 10.0 > 100.0){
-            this.setEnergy(100.0);
+        if(this.getEnergy() + 10> 100){
+            this.setEnergy(100);
         }else{
             this.setEnergy(this.getEnergy()+10);
         }
@@ -41,8 +39,5 @@ public class Gorilla extends Mammal{
         }
     }
 
-//    @Override
-//    public void displayEnergy(){
-//        System.out.println(this.getEnergy());
-//    }
+
 }
