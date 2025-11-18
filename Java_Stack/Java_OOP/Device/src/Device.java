@@ -1,3 +1,4 @@
+// edit error github commit  
 public class Device {
     protected int battery;
 
