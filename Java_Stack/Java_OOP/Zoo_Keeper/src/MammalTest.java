@@ -1,3 +1,4 @@
+// edit error github commit 
 import java.util.LinkedList;
 
 public class MammalTest {
@@ -6,6 +7,5 @@ public class MammalTest {
         System.out.println(gorilla.getEnergy());
         Bat bat = new Bat();
         System.out.println(bat.getEnergy());
-        // this is comment
     }
 }
