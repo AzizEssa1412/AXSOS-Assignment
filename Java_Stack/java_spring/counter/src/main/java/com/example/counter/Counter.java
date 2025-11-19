@@ -1,4 +1,4 @@
-package comm.example.counter;
+package com.example.counter;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.boot.Banner;
@@ -12,9 +12,9 @@ public class Counter {
 
     @RequestMapping("/counter")
 
-    public String index(HttpSession session, Model model){
-        if(session.getAttribute("counter")  == null){
-            session.setAttribute("counter",0);
+    public String index(HttpSession session, Model model){ //function to handle the request
+        if(session.getAttribute("counter")  == null){ //check if the session attribute is null
+            session.setAttribute("counter",0);//give the session attribute a name and a value
         }
         else {
             Integer counter = (Integer) session.getAttribute("counter");
