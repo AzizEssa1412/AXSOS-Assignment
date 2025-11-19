@@ -1,4 +1,4 @@
-package counter;
+package comm.example.counter;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.boot.Banner;
