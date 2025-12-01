@@ -1,5 +1,15 @@
-package Java_Stack.java_spring;
+class Solution {
+    public char check(String sent) {
+        char[] see = new char[26];
 
-public class test {
-    
+        for (char a : sent.toCharArray()) {
+            see[a - 'a'] = true;
+        }
+        for (boolean Present : see) {
+            if (!Present) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
