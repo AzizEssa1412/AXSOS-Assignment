@@ -114,3 +114,89 @@ eat();
 // half-chicken
 
 
+
+//-------------------------------------------------------------------------------
+
+
+// 3. Original Code:
+var brendan = 'super cool';
+function print() {
+  brendan = 'only okay';
+  console.log(brendan);
+}
+console.log(brendan);
+
+// Hosting Explanation:
+var brendan;
+function print() {
+    brendan = 'only okay';
+    console.log(brendan);
+}
+brendan = 'super cool';
+console.log(brendan);
+
+// Output:
+// super cool
+
+
+//-------------------------------------------------------------------------------
+
+
+// 4. Original Code:
+var food = 'chicken';
+console.log(food);
+eat();
+function eat() {
+  food = 'half-chicken';
+  console.log(food);
+  var food = 'gone';
+}
+
+// Hosting Explanation:
+var food;
+function eat() {
+    var food;
+    food = 'half-chicken';
+    console.log(food);
+    food = 'gone';
+}
+food = 'chicken';
+console.log(food);
+eat();
+
+// Output:
+// chicken
+// half-chicken
+
+
+//-------------------------------------------------------------------------------
+
+
+// 5. Original Code:
+mean();
+console.log(food);
+var mean = function() {
+  food = "chicken";
+  console.log(food);
+  var food = "fish";
+  console.log(food);
+}
+console.log(food);
+
+// Hosting Explanation:
+var mean;
+mean();           
+console.log(food);
+mean = function() {
+    var food;
+    food = "chicken";
+    console.log(food);
+    food = "fish";
+    console.log(food);
+}
+console.log(food);
+
+// Output:
+// TypeError: mean is not a function
+
+
