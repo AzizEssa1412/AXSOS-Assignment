@@ -72,8 +72,48 @@
 //===================================================================================
 
 
-for (let i = 0; i < 3; i++) {
-    const name = "Khaled";
-}
+// for (let i = 0; i < 3; i++) {
+//     const name = "Khaled";
+// }
 
-const name = names[index];
+// const name = names[index];
+
+
+
+//===================================================================================
+
+
+// let j =0
+// const array = [2,3,3,3,6,9,9]
+// for (let i = 0; i < array.length; i++) {
+//     if(array[i] != array[j]){
+//         j++
+//         array[j] = array[i]
+//     }
+// }
+
+// //set array length to j+1
+// array.splice(j +1)
+// console.log(array);
+
+// // Output:
+// [ 2, 3, 6, 9 ] 
+
+
+
+//===================================================================================
+
+// anather solution
+
+var removeDuplicates = function(nums) {
+    let left = 0;
+    let right = 1;
+    wihle (right < nums.length) {
+        if (nums[left] !== nums [rigth]) {
+            left ++;
+            nums[left] = nums[right];
+        }
+        right ++;
+    }
+    nums.splice(left + 1);
+};
