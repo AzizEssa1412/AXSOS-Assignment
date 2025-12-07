@@ -105,15 +105,46 @@
 
 // anather solution
 
-var removeDuplicates = function(nums) {
-    let left = 0;
-    let right = 1;
-    wihle (right < nums.length) {
-        if (nums[left] !== nums [rigth]) {
-            left ++;
-            nums[left] = nums[right];
+// var removeDuplicates = function(nums) {
+//     let left = 0;
+//     let right = 1;
+//     wihle (right < nums.length) {
+//         if (nums[left] !== nums [rigth]) {
+//             left ++;
+//             nums[left] = nums[right];
+//         }
+//         right ++;
+//     }
+//     nums.splice(left + 1);
+// };
+
+
+
+//===================================================================================
+
+
+
+// Print linked list in reverse order using stack
+
+    function printReverseUsingStack(head) {
+        const stack = [];
+        let current = head;
+
+        while (current !== null) {
+            stack.push(current.data); 
+            current = current.next;
         }
-        right ++;
+
+        console.log("Linked List in Reverse Order:");
+        while (stack.length > 0) {
+            console.log(stack.pop());
+        }
     }
-    nums.splice(left + 1);
-};
+
+    // const myList = new LinkedList();
+    // myList.add(10);
+    // myList.add(20);
+    // myList.add(30);
+    // myList.add(40);
+
+    // printReverseUsingStack(myList.head);

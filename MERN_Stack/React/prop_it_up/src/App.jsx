@@ -10,6 +10,7 @@ function App() {
         <SaleItem name={"Smith , John"} age={88} color={"brown"} />
         <SaleItem name={"Fillmore , Millard"} age={50} color={"green"} />
         <SaleItem name={"Smith , Maria"} age={62} color={"yellow"} />
+
     </div>
     </>
   )
