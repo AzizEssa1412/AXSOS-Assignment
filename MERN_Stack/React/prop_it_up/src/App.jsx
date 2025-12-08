@@ -1,5 +1,5 @@
 import './App.css'
-import SaleItem from './components/Saleitem'
+import SaleItem from '../components/Saleitem'
 
 function App() {
 
