@@ -1,4 +1,4 @@
-
+// test file completed
 package main.java.com.example.omikuji;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
