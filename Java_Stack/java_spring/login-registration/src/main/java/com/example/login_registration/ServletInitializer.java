@@ -1,3 +1,5 @@
+// test file completed
+
 package com.example.login_registration;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
