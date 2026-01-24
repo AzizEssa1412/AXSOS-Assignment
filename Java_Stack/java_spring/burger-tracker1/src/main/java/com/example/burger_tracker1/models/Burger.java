@@ -1,6 +1,6 @@
+// test file completed
 
 package main.java.com.example.burger_tracker1.models;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
